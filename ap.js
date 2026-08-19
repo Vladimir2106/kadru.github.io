@@ -11,7 +11,7 @@ async function send_telega(event) {
   const massage_rezalt2 = document.querySelector(".rezalt2");
   const massage_rezalt3 = document.querySelector(".rezalt3");
 
-  massage_rezalt.textContent = "";
+ // massage_rezalt.textContent = "";
   
 
   //повідомлення 1
