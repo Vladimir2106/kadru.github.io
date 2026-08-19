@@ -10,7 +10,7 @@ async function send_telega(event) {
   const massage_rezalt = document.querySelector(".rezalt");
   const massage_rezalt2 = document.querySelector(".rezalt2");
   const massage_rezalt3 = document.querySelector(".rezalt3");
-  //console.log(butom, massage_rezalt)
+
   massage_rezalt.textContent = "";
   
 
@@ -27,30 +27,29 @@ async function send_telega(event) {
   const butom3 = document.querySelector(".butom3");
 
 
-  //console.log(event.submitter.id)
   let a=event.submitter.id
-  //console.log(typeof(a))
+
 
  
-  const formData = new FormData(forma); //збирає всі данні із форми, яка заповнюється користувачем
-  const formData2 = Object.fromEntries(formData.entries()); //перетворення зібраних даних в обєкт
+  const formData = new FormData(forma); 
+  const formData2 = Object.fromEntries(formData.entries()); 
   const zayavka = `Заявка от ${formData2.name}!\nтелефон клієнта ${formData2.tel} !\n коментар щодо спеціаліста ${formData2.vud}`;
  
-  //const {name, tel, golf}=Object.fromEntries(new formData(forma).entries())
+  
 
  
 
-  const formData21 = new FormData(forma2); //збирає всі данні із форми, яка заповнюється користувачем
-  const formData22 = Object.fromEntries(formData21.entries()); //перетворення зібраних даних в обєкт
+  const formData21 = new FormData(forma2); 
+  const formData22 = Object.fromEntries(formData21.entries()); 
   const zayavka2 = `Заявка от ${formData22.name}!\nтелефон клієнта ${formData22.tel} !\n шукаю наступного спеціаліста ${formData22.vud}`;
-  //console.log(zayavka2)
 
 
 
-  const formData3 = new FormData(forma3); //збирає всі данні із форми, яка заповнюється користувачем
-  const formData31 = Object.fromEntries(formData3.entries()); //перетворення зібраних даних в обєкт
+
+  const formData3 = new FormData(forma3);
+  const formData31 = Object.fromEntries(formData3.entries()); 
   const zayavka3 = `Заявка от ${formData31.name}!\nтелефон клієнта ${formData31.tel} !\n шукаю наступного спеціаліста ${formData31.vud}`;
-  //console.log(zayavka2)
+
 
  
 
@@ -96,31 +95,29 @@ else if (a==='2'){
     });
     console.log(response)
 
-         window.location='https://localhost/GIT/lending_kadru/'
+         window.location='https://vladimir2106.github.io/kadru.github.io/'
   }
   console.log(response)
 
-   //отработка ошибки запроса
+ 
     if (response.ok) {
-      massage_rezalt.textContent = "Ваше замовлення прийняте, ми скоро з вами зв'яжемося"; //виведення повідомлення коли відбувся успішний запрос
-      forma.reset(); // очистка формы после отправки
-      forma2.reset(); // очистка формы после отправки
-      forma3.reset(); // очистка формы после отправки
+      massage_rezalt.textContent = "Ваше замовлення прийняте, ми скоро з вами зв'яжемося"; 
+      forma.reset(); 
+      forma2.reset(); 
+      forma3.reset(); 
 
     } else {
-      throw new Error(response.statusText); //создали текст ошибки
+      throw new Error(response.statusText); 
     }
   } catch (error) {
-    console.error(error); //виведення помилки яку зафіксували
-    massage_rezalt.textContent = "произошла ошибка, подайте заказ ещё раз"; // виведення повідомлення коли запрос не успішний
-      forma.reset(); // очистка формы после отправки
-      forma2.reset(); // очистка формы после отправки
-      forma3.reset(); // очистка формы после отправки
+    console.error(error); 
+    massage_rezalt.textContent = "произошла ошибка, подайте заказ ещё раз"; 
+      forma.reset();
+      forma2.reset();
+      forma3.reset(); 
       }
 }
  
-
-
 /*кінець функції відправки повідомлень в телеграм */
 
 
@@ -146,12 +143,11 @@ const body=document.body;
 function otmena(){
     let pos=window.scrollY;
     body.classList.add('otmenascrol');
-    /*начало скрипт для отмены скрола посередине сайта что б не пригал */
+   
     
     console.log(pos);
     body.dataset.position=pos;
     body.style.top=-pos+'px';
-/*конец скрипт для отмены скрола посередине сайта что б не пригал */
 }
 
 
