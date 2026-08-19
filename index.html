@@ -24,7 +24,7 @@
             <div class="box310">
                 <div class="box52">Пошук і підбір досвідчених спеціалистів для вашої компанії</div>
             </div>
-            <form class="box5"  action="/send.php" method="post">
+            <form class="box5 form"  onsubmit="send_telega(event)" method="post">
                 <div>
                     <div class="box53">Як до Вас звертатись?</div>
                     <input type="text" name="name" placeholder="Ваше ім'я" required>  
@@ -36,8 +36,8 @@
                 <div>
                     <div class="box53">Кого ви шукаєте?</div> 
                     
-                      <select required>
-                        <option value="" disabled selected>Виберіть посаду</option>
+                      <select required name="vud">
+                        <option value=""  disabled selected>Виберіть посаду</option>
                         <option value="IT спеціалисти">IT спеціалисти</option>
                         <option value="ТОП менеджери">ТОП менеджери</option>
                         <option value="Директор">Директор</option>
@@ -49,7 +49,8 @@
                 </div> 
                 <div class="box53">
                     <div class="box54">Кнопка техническа</div>
-                    <button type="submit">Відправити</button>
+                    <button class="butom" id="1" type="submit" name="send">Відправити</button>
+                     <!h3 class="rezalt"><!/h3>
                 </div>
             </form>
         </div>
@@ -59,7 +60,6 @@
 
     </div>
 </div>
-
 
 
 <div class="box3" id="b2">
@@ -157,8 +157,6 @@
     </div>
 </div>
 
-
-
 <div class="box3" id="b2">
     <div class="box31" id="slka1">Чому з нами вигідно працювати</div>
     <div class="box397">
@@ -213,7 +211,6 @@
         </div>
     </div>
 </div>
-
 
 
 <div class="box3">
@@ -276,8 +273,6 @@
     </div>
 </div>
 
-
-
 <div class="b8">
     <div class="box81" style="background-image:url('img/10.png')">
         <div class="box92">
@@ -298,11 +293,12 @@
         </div>
     <div class="box86">
         <div class="box88">
-            <form class="box89" action="/send5.php" method="post">
-                <input type="text" name="name2" placeholder="Як до Вас звертатись?" required>   
-                <input type="text" name="tel2" placeholder="Телефон" required>
-                <input type="text" name="vud2" placeholder="Коментарій" id="b4" required>
-                <button type="submit">Залишити заявку</button>
+            <form  class="form2 box89" onsubmit="send_telega(event)">
+                <input type="text" name="name" placeholder="Як до Вас звертатись?" required>   
+                <input type="text" name="tel" placeholder="Контатний телефон" required>
+                <input type="text" name="vud" placeholder="Коментар щодо спеціаліста" id="b4" required>
+                <button class="butom2" id="2" type="submit" name="send">Залишити заявку</button>
+                <!h3 class="rezalt2"><!/h3>
             </form>
         </div>
         <div class="box87">
@@ -354,85 +350,20 @@
             <div class="modalzakrt11" data-vid1="vidgyk2">
                 <b>&times;</b>
             </div>
-            <form class="formvidgyk1"  action="/send1.php" method="post">
-                <input type="text" name="name1" placeholder="Як до Вас звертатись?" required>   
-                <input type="text" name="tel1" placeholder="Телефон" required>
-                <button type="submit">Відправити</button>
+            <form class="formvidgyk1 form3" onsubmit="send_telega(event)">
+                <input type="text" name="name" placeholder="Як до Вас звертатись?" required>   
+                <input type="text" name="tel" placeholder="Телефон" required>
+                 <input type="text" name="vud" placeholder="Коментар щодо спеціаліста" id="b4" required>
+                <button class="butom3" id="3" type="submit">Відправити</button>
+                 <!h3 class="rezalt3"><!/h3>
             </form>
         </div>
     </div>
 </div>
 
-<script>
-/* начало плавная прокрутка */
-const yakor=document.querySelectorAll('a[href*="#"]')
-for (let i of yakor){
-    i.addEventListener('click', function(event){
-       event.preventDefault();
-        const n=i.getAttribute('href')
-        document.querySelector(''+ n ).scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        })
-    })
-}
-/* конец плавная прокрутка */
-
-const body=document.body;
-
-function otmena(){
-    let pos=window.scrollY;
-    body.classList.add('otmenascrol');
-    /*начало скрипт для отмены скрола посередине сайта что б не пригал */
-    
-    console.log(pos);
-    body.dataset.position=pos;
-    body.style.top=-pos+'px';
-/*конец скрипт для отмены скрола посередине сайта что б не пригал */
-}
-
-
-function vkl(){
-     /*начало скрипт для поновления скрола посередине сайта что б не пригал */
-    let pos=parseInt(body.dataset.position,10) /*перевели в число значение в дата атрибуте */
-    console.log(pos);
-    body.style.top='auto';
-    body.classList.remove('otmenascrol');
-    window.scroll({top:pos,left:0});
-    body.removeAttribute('pos');
-    /*конец скрипт для поновления скрола посередине сайта что б не пригал*/
-}
 
 
 
-
-/* начало кнопка телега */
-function vidgyk(){
-    const v4=document.querySelector('[data-vid1]')
-    const v5=document.querySelector('.box811')
-    const v6=document.querySelector('.pulse')
-    const v7=document.querySelector('.box9')
-    const v8=document.querySelector('.dws')
-
-    v6.addEventListener('click', function(){
-        v5.style.display="flex";
-        v7.style.display="flex";
-        v8.style.display="none";
-        otmena();
-        console.log(v6)
-    })
-    v4.addEventListener('click', function(){
-        v5.style.display="none";
-        v7.style.display="none";
-        v8.style.display="flex";
-        vkl();
-        
-    })
-}
-vidgyk();
-/* конец кнопка телега */
-
-</script>
-
+  <script src="ap.js"></script>
 </body>
 </html>
