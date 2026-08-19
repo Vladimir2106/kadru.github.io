@@ -7,7 +7,7 @@ const telega_api = `https://api.telegram.org/bot${telega_token}/sendMessage`;
 
 async function send_telega(event) {
   event.preventDefault(); //відміна перезавантаження сторінки 
-  const massage_rezalt = document.querySelector(".rezalt");
+  let massage_rezalt = document.querySelector(".rezalt");
   const massage_rezalt2 = document.querySelector(".rezalt2");
   const massage_rezalt3 = document.querySelector(".rezalt3");
 
