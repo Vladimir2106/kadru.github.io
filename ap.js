@@ -110,7 +110,7 @@ else if (a==='2'){
       throw new Error(response.statusText); 
     }
   } catch (error) {
-    console.error(error); 
+   // console.error(error); 
     massage_rezalt.textContent = "произошла ошибка, подайте заказ ещё раз"; 
       forma.reset();
       forma2.reset();
