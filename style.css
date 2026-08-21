@@ -231,6 +231,7 @@ select{
     align-items: center;
     transition-duration: 1s;
     padding: 2%;
+    box-shadow: 5px 5px 5px 5px #957979e8;
 }
 
 .box35:hover{
