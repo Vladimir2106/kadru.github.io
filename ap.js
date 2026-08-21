@@ -116,7 +116,7 @@ async function send_telega3(event) {
       massage_rezalt3.textContent = "Ваше замовлення прийняте, ми скоро з вами зв'яжемося"; //виведення повідомлення коли відбувся успішний запрос
       forma3.reset(); // очистка формы после отправки
 
-      setTimeout(() => window.location='https://localhost/GIT/lending_kadru/', 2000);
+      setTimeout(() => window.location='https://vladimir2106.github.io/kadru.github.io/', 2000);
       
       
     } else {
